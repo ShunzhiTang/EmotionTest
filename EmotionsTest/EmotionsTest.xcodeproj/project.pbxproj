@@ -12,6 +12,7 @@
 		241BFAD91BD3418A001E033E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 241BFAD71BD3418A001E033E /* Main.storyboard */; };
 		241BFADB1BD3418A001E033E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 241BFADA1BD3418A001E033E /* Assets.xcassets */; };
 		241BFADE1BD3418A001E033E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 241BFADC1BD3418A001E033E /* LaunchScreen.storyboard */; };
+		24FD63C51BD36F1E00ADFA7E /* EmoticonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FD63C41BD36F1E00ADFA7E /* EmoticonViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		241BFADA1BD3418A001E033E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		241BFADD1BD3418A001E033E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		241BFADF1BD3418A001E033E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24FD63C41BD36F1E00ADFA7E /* EmoticonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		241BFAD21BD3418A001E033E /* EmotionsTest */ = {
 			isa = PBXGroup;
 			children = (
+				24FD63C11BD36DA500ADFA7E /* EmoticonKeyBoard */,
 				241BFAD31BD3418A001E033E /* AppDelegate.swift */,
 				241BFAD51BD3418A001E033E /* ViewController.swift */,
 				241BFAD71BD3418A001E033E /* Main.storyboard */,
@@ -62,6 +65,14 @@
 				241BFADF1BD3418A001E033E /* Info.plist */,
 			);
 			path = EmotionsTest;
+			sourceTree = "<group>";
+		};
+		24FD63C11BD36DA500ADFA7E /* EmoticonKeyBoard */ = {
+			isa = PBXGroup;
+			children = (
+				24FD63C41BD36F1E00ADFA7E /* EmoticonViewController.swift */,
+			);
+			path = EmoticonKeyBoard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				241BFAD61BD3418A001E033E /* ViewController.swift in Sources */,
+				24FD63C51BD36F1E00ADFA7E /* EmoticonViewController.swift in Sources */,
 				241BFAD41BD3418A001E033E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +295,7 @@
 				241BFAE41BD3418A001E033E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
