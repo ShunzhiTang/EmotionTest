@@ -12,6 +12,8 @@
 		241BFAD91BD3418A001E033E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 241BFAD71BD3418A001E033E /* Main.storyboard */; };
 		241BFADB1BD3418A001E033E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 241BFADA1BD3418A001E033E /* Assets.xcassets */; };
 		241BFADE1BD3418A001E033E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 241BFADC1BD3418A001E033E /* LaunchScreen.storyboard */; };
+		2489199E1BD4AB270061CA0B /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2489199D1BD4AB270061CA0B /* Emoticons.bundle */; settings = {ASSET_TAGS = (); }; };
+		248919A01BD4AB7A0061CA0B /* TSZEmoticons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2489199F1BD4AB7A0061CA0B /* TSZEmoticons.swift */; settings = {ASSET_TAGS = (); }; };
 		24FD63C51BD36F1E00ADFA7E /* EmoticonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FD63C41BD36F1E00ADFA7E /* EmoticonViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -23,6 +25,8 @@
 		241BFADA1BD3418A001E033E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		241BFADD1BD3418A001E033E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		241BFADF1BD3418A001E033E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2489199D1BD4AB270061CA0B /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
+		2489199F1BD4AB7A0061CA0B /* TSZEmoticons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TSZEmoticons.swift; sourceTree = "<group>"; };
 		24FD63C41BD36F1E00ADFA7E /* EmoticonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,7 +74,9 @@
 		24FD63C11BD36DA500ADFA7E /* EmoticonKeyBoard */ = {
 			isa = PBXGroup;
 			children = (
+				2489199D1BD4AB270061CA0B /* Emoticons.bundle */,
 				24FD63C41BD36F1E00ADFA7E /* EmoticonViewController.swift */,
+				2489199F1BD4AB7A0061CA0B /* TSZEmoticons.swift */,
 			);
 			path = EmoticonKeyBoard;
 			sourceTree = "<group>";
@@ -133,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				241BFADE1BD3418A001E033E /* LaunchScreen.storyboard in Resources */,
+				2489199E1BD4AB270061CA0B /* Emoticons.bundle in Resources */,
 				241BFADB1BD3418A001E033E /* Assets.xcassets in Resources */,
 				241BFAD91BD3418A001E033E /* Main.storyboard in Resources */,
 			);
@@ -148,6 +155,7 @@
 				241BFAD61BD3418A001E033E /* ViewController.swift in Sources */,
 				24FD63C51BD36F1E00ADFA7E /* EmoticonViewController.swift in Sources */,
 				241BFAD41BD3418A001E033E /* AppDelegate.swift in Sources */,
+				248919A01BD4AB7A0061CA0B /* TSZEmoticons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

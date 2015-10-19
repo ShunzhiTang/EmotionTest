@@ -9,12 +9,17 @@ private let TSZCollectionIdentify = "TSZCollectionIdentify"
 
 class EmoticonViewController: UIViewController {
     
+    //引入模型 ,懒加载
+    private lazy var emoticonsPackage  =  TSZEmoticonsPackage.packages()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
         //设置UI
         setupUI()
     }
-
+    
     ///表情键盘的点击事件
     func clickEmotion(item: UIBarButtonItem){
         print("我是表情  我自信....+\(item.tag)")
@@ -74,7 +79,6 @@ class EmoticonViewController: UIViewController {
         collectionView.dataSource = self
     }
     
-    
     //MARK - 懒加载
     private lazy var toolsBar: UIToolbar = {
         let tb = UIToolbar()
@@ -118,12 +122,11 @@ class EmoticonViewController: UIViewController {
     }
 }
 
-
 //  使用扩展 、MARK: 数据源方法
 extension EmoticonViewController: UICollectionViewDataSource{
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 21 * 3
+        return emoticonsPackage[section].emoticons?.count ?? 0
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
