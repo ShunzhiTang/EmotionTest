@@ -14,7 +14,7 @@ class EmoticonViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(emoticonsPackage.count)
 
         //设置UI
         setupUI()
@@ -125,6 +125,10 @@ class EmoticonViewController: UIViewController {
 //  使用扩展 、MARK: 数据源方法
 extension EmoticonViewController: UICollectionViewDataSource{
     
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return emoticonsPackage.count
+    }
+    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return emoticonsPackage[section].emoticons?.count ?? 0
     }
@@ -136,12 +140,25 @@ extension EmoticonViewController: UICollectionViewDataSource{
 //        print(indexPath.item)
     
         cell.backgroundColor = (indexPath.item % 2 == 0) ?UIColor.redColor() : UIColor.greenColor()
+        cell.emoticon = emoticonsPackage[indexPath.section].emoticons![indexPath.item]
         return cell
     }
 }
 
 // MARK: 自定义Colletion
 private class EmoticonCell : UICollectionViewCell{
+    
+    //表示表情
+    var emoticon:TSZEmoticons? {
+        didSet {
+            //contentsOfFile 路径不存在，会返回nil
+            
+            emotionButton.setImage(UIImage(contentsOfFile: emoticon!.imagePath), forState: UIControlState.Normal)
+            //设置emoji
+            emotionButton.setTitle(emoticon!.emoji, forState: UIControlState.Normal)
+        }
+    }
+    
     //重写init方法
     
     override init(frame: CGRect) {
@@ -151,6 +168,8 @@ private class EmoticonCell : UICollectionViewCell{
         //设置相对bounds的布局
         emotionButton.frame = CGRectInset(bounds, 4, 4)
         
+        //设置按钮字体
+        emotionButton.titleLabel?.font = UIFont.systemFontOfSize(32)
         addSubview(emotionButton)
     }
     
