@@ -12,11 +12,15 @@ class ViewController: UIViewController {
     //使用stordboard 去连线
     //我们需要自己去自定义键盘
     
+    private lazy var emoticonView:EmoticonViewController = EmoticonViewController()
+    
     @IBOutlet weak var textView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        emoticonView.view.backgroundColor  = UIColor.whiteColor()
+        textView.inputView = emoticonView.view
     }
 
 
