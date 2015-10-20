@@ -60,7 +60,6 @@ class EmoticonViewController: UIViewController {
         //布局高度
         view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-[collectionView]-[toolsBar(44)]-0-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict))
         
-        print(toolsBar)
         
         //准备控件
         prepareToolsBar()
@@ -104,7 +103,6 @@ class EmoticonViewController: UIViewController {
         
         tb.tintColor = UIColor.darkGrayColor()
         tb.backgroundColor = UIColor.redColor()
-        
         
         return tb
         }()
