@@ -9,6 +9,7 @@ chs:    定义的发布微博以及网络传输使用的微博文字字符串
 png:    在客户端显示的图片名称
 
 code:   emoji要显示的16进制字符串！
+
 */
 
 import UIKit
@@ -23,8 +24,9 @@ class TSZEmoticonsPackage: NSObject {
     //把整个表情数组存储作为这个包属性 ， 这样可以实现更好的 模型 ，类似于 模型的嵌套
     var emoticons: [TSZEmoticons]?
     
-    init(id: String) {
+    init(id: String , groupName: String = "") {
         self.id = id
+        self.groupName = groupName
     }
     
     //加载所有的表情包
@@ -37,11 +39,12 @@ class TSZEmoticonsPackage: NSObject {
         
         //3、遍历数组
         var arrayM = [TSZEmoticonsPackage]()
-        
+         let package = TSZEmoticonsPackage(id:"", groupName:"最近AA").appendEmptyEmoctions()
+        arrayM.append(package)
         for d  in array {
             let id = d["id"] as! String
             //链式响应
-            let package = TSZEmoticonsPackage(id: id).loadEmoticons()
+            let package = TSZEmoticonsPackage(id: id).loadEmoticons().appendEmptyEmoctions()
             
             arrayM.append(package)
         }
@@ -60,10 +63,37 @@ class TSZEmoticonsPackage: NSObject {
         
         //2、遍历数组
         emoticons = [TSZEmoticons]()
+        var index = 0
         for d in array {
             
-            
             emoticons?.append(TSZEmoticons(id: id , dict:d))
+            
+            index++
+            if index == 20 {
+                emoticons?.append(TSZEmoticons(remove: true))
+                index = 0
+            }
+        }
+        return self
+    }
+    
+    //表情数组中追加空白表情 ，如果最后一页不是21 个表情就追加 空白
+    func appendEmptyEmoctions() -> Self {
+        //判断表情是否 存在
+        if emoticons == nil{
+            emoticons = [TSZEmoticons]()
+        }
+        //判断是否整页
+        let count = emoticons!.count % 21
+        
+        print("应该\(count) 个表情")
+        
+        if count > 0 || emoticons!.count == 0 {
+            for _ in  count..<20 {
+                emoticons?.append(TSZEmoticons(remove: false))
+            }
+            //最末追加一个删除按钮
+            emoticons?.append(TSZEmoticons(remove: true))
         }
         return self
     }
@@ -79,8 +109,6 @@ class TSZEmoticonsPackage: NSObject {
 //MARK: - 表情模型 （包括emoji  、 默认 、 浪小花）
 class TSZEmoticons: NSObject {
     
-    // 设置属性
-    
     //表情目录，com.sina.lagnxiaohua ，三种表情的三个id
     var id: String?
     /// 默认表情发送到网上的表情文字
@@ -93,10 +121,8 @@ class TSZEmoticons: NSObject {
         if  chs == nil{
             return ""
         }
-        
         //path + id + png
         return  TSZEmoticonsPackage.bundlePath.stringByAppendingString("/\(id!)").stringByAppendingString("/\(png!)")
-        
     }
     
     //把图片的 数据都放在 model中 ，通过code 给emoji 复制
@@ -110,8 +136,12 @@ class TSZEmoticons: NSObject {
             emoji = String(Character(UnicodeScalar(value)))
         }
     }
-    
     var emoji: String?
+    
+    var removeEmotion = false
+    init (remove: Bool){
+        removeEmotion = remove
+    }
     
     //重写字典转模型的方法
     init(id: String , dict: [String : String]){

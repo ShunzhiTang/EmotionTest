@@ -16,23 +16,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Wev-oP-286">
-                                <rect key="frame" x="55" y="59" width="250" height="145"/>
-                                <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.hello world 从这里开始： " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="h7V-TL-XzI">
-                                        <rect key="frame" x="0.0" y="0.0" width="250" height="145"/>
-                                        <color key="backgroundColor" red="0.86274516582489014" green="0.98431378602981567" blue="0.49803924560546875" alpha="1" colorSpace="deviceRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
-                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="从这里开始：" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tSN-5v-5eS">
+                                <rect key="frame" x="58" y="52" width="264" height="152"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B66-7O-cgz">
+                                <rect key="frame" x="85" y="319" width="120" height="30"/>
+                                <state key="normal" title="输入文本框的文字"/>
+                                <connections>
+                                    <action selector="outputText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CNX-Is-Yc1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="textView" destination="h7V-TL-XzI" id="EE2-sU-sgc"/>
+                        <outlet property="textKeyView" destination="tSN-5v-5eS" id="4Xf-CF-I69"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
